@@ -1,0 +1,25 @@
+/* board */
+create table if not exists board ( 
+id bigint(20) not null auto_increment comment 'PK', 
+title varchar(200) not null comment  '제목', 
+content text not null comment  '내용', 
+readCnt int(11) not null default 0 comment  '조회수', 
+registerId varchar(100) not null comment  '작성자', 
+createAt datetime null  default null comment  '작성일', 
+updateAt datetime null  default null comment  '수정일', 
+primary key(id) ) 
+engine=innodb default charset=utf8mb3 comment '게시판';
+
+
+create table if not exists member (
+id bigint(20) not null auto_increment=100000 comment 'PK',
+name varchar(200) not null comment '성명',
+email varchar(200) null comment 'email',
+CI varchar(500) not null comment 'CI',
+DI varchar(500) not null comment 'DI',
+mobileNo varchar(20) not null comment 'mobile number'
+registId varchar(100) not null comment  '작성자', 
+createAt datetime null  default null comment  '작성일',
+updateId varchar(100) not null comment  '수정자', 
+updateAt datetime null  default null comment  '수정일')
+engine=innodb default charset=utf8mb3 comment '고객';
